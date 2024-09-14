@@ -1,0 +1,19 @@
+input:
+  label: postgres_cdc_input
+  pg_stream:
+    host: {host}
+    slot_name: {slot_name}
+    user: {user}
+    password: {password}
+    port: 5432
+    stream_snapshot: true
+    schema: public
+    database: mocks
+    checkpoint_storage: {redis checkpoint}
+    tables:
+      - name of the table
+
+output:
+  label: ""
+  stdout:
+    codec: lines
